@@ -25,9 +25,9 @@ services:
       - ./public:/var/www/html
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.api.rule=Host(`traefik.akiryanov.ru`)"
+      - "traefik.http.routers.api.rule=Host(`traefik.ваш_сайт.ru`)"
       - "traefik.http.routers.api.service=api@internal"
-      - "traefik.http.routers.web_1.rule=Host(`akiryanov.ru`)"
+      - "traefik.http.routers.web_1.rule=Host(`домен.ru`)"
       - "traefik.http.services.web_1.loadbalancer.server.port=80"
       - "traefik.http.services.web_1.loadbalancer.passhostheader=false"
   web_2:
@@ -44,7 +44,7 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.api.rule=Host(`traefik.akiryanov.ru`)"
       - "traefik.http.routers.api.service=api@internal"
-      - "traefik.http.routers.web_2.rule=Host(`195.66.114.177`)"
+      - "traefik.http.routers.web_2.rule=Host(`сайт или IP`)"
       - "traefik.http.services.web_2.loadbalancer.server.port=80"
       - "traefik.http.services.web_2.loadbalancer.passhostheader=false"
   php:
